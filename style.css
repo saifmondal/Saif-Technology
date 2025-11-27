@@ -1,70 +1,131 @@
-
 :root {
     --bg: #0a0f24;
     --text: #ffffff;
     --card: rgba(255,255,255,0.1);
     --btn: #00eaff;
 }
+
 body.light {
     --bg: #ffffff;
     --text: #000000;
     --card: #e7f5ff;
     --btn: #0077ff;
 }
+
+/* Global */
 body {
     margin: 0;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
     transition: 0.4s;
-    background-size: cover;
-    background-position: center;
 }
-header {
+
+/* Navbar */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 25px;
     background: var(--card);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-header img {
-    height: 50px;
-    border-radius: 8px;
+
+.logo {
+    height: 45px;
+    border-radius: 5px;
 }
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
+
+/* Navbar Menu */
+.navbar ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 12px;
+}
+
+.navbar ul li a {
     color: var(--text);
+    text-decoration: none;
     font-size: 18px;
     font-weight: bold;
 }
-nav a:hover {
+
+.navbar ul li a:hover {
     color: var(--btn);
 }
-.theme-btn {
-    padding: 8px 15px;
+
+/* Theme Button */
+#toggle-theme {
+    padding: 10px 18px;
     background: var(--btn);
     border: none;
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
 }
-.container {
-    max-width: 700px;
-    margin: 80px auto;
-    background: var(--card);
-    padding: 30px;
-    border-radius: 15px;
+
+/* Hero Section */
+.hero {
     text-align: center;
+    padding: 60px 20px;
 }
+
+.profile-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 6px solid var(--btn);
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-top: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+/* Buttons */
 .btn {
     display: inline-block;
-    margin: 10px 0;
     padding: 12px 25px;
+    margin: 15px 8px;
     background: var(--btn);
     color: #000;
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .navbar ul li {
+        margin: 10px 0;
+    }
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
 }
