@@ -1,0 +1,70 @@
+
+:root {
+    --bg: #0a0f24;
+    --text: #ffffff;
+    --card: rgba(255,255,255,0.1);
+    --btn: #00eaff;
+}
+body.light {
+    --bg: #ffffff;
+    --text: #000000;
+    --card: #e7f5ff;
+    --btn: #0077ff;
+}
+body {
+    margin: 0;
+    font-family: Arial;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.4s;
+    background-size: cover;
+    background-position: center;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: var(--card);
+    backdrop-filter: blur(5px);
+}
+header img {
+    height: 50px;
+    border-radius: 8px;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 18px;
+    font-weight: bold;
+}
+nav a:hover {
+    color: var(--btn);
+}
+.theme-btn {
+    padding: 8px 15px;
+    background: var(--btn);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.container {
+    max-width: 700px;
+    margin: 80px auto;
+    background: var(--card);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+.btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 12px 25px;
+    background: var(--btn);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+}
