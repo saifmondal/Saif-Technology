@@ -9,31 +9,40 @@
 
 <body>
 
-<header>
-    <img src="logo.png" alt="Saif Technology Logo">
-    <nav>
+<!-- NAVBAR -->
+<header class="navbar">
+    <img src="logo.png" class="logo" alt="Saif Technology Logo">
+
+    <input type="checkbox" id="menu-toggle">
+    <label class="menu-icon" for="menu-toggle">☰</label>
+
+    <nav class="menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
+        <button class="theme-btn" onclick="toggleTheme()">Theme</button>
     </nav>
-    <button class="theme-btn" onclick="toggleTheme()">Toggle Theme</button>
 </header>
 
-<div class="container">
-    <h1>Saif Technology</h1>
-    <p>Welcome to my official website!</p>
 
-    <a class="btn" href="https://www.youtube.com/@It_s_Saif" target="_blank">Visit YouTube</a>
-    <br>
-    <a class="btn" href="https://www.instagram.com/saif___mondal" target="_blank">Follow Instagram</a>
-</div>
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Saif Technology</h1>
+        <p>Welcome to my official website!</p>
+
+        <a class="btn" href="https://www.youtube.com/@It_s_Saif" target="_blank">Visit YouTube</a>
+        <a class="btn" href="https://www.instagram.com/saif___mondal" target="_blank">Follow Instagram</a>
+    </div>
+
+    <img src="bg.jpg" class="hero-img">
+</section>
 
 <script>
 function toggleTheme() {
-    document.body.classList.toggle('light');
+    document.body.classList.toggle("light");
 }
-document.body.style.backgroundImage = "url('bg.jpg')";
 </script>
 
 </body>
