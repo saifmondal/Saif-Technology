@@ -1,48 +1,31 @@
-// ------------------------------
-// Toggle Dark / Light Theme
-// ------------------------------
+// 🌙 Toggle Dark/Light Theme
 function toggleTheme() {
     document.body.classList.toggle("light");
 }
 
-// Set Background Image
-document.body.style.backgroundImage = "url('bg.jpg')";
 
 
-// ------------------------------
-// YOUTUBE AUTO VIDEO LOADER
-// ------------------------------
+// 📌 YouTube Videos Auto Load (Optional)
+// https://youtu.be/nzgKmiGxhVY?si=T-RjpxGn0yIOV0UW
 
-const channelID = "UCs4lK8T3i0uUQyFsBR1rQTA";   // আপনার YouTube Channel ID
-const videoContainer = document.getElementById("video-list");
+const videoList = [
+    // এখানে শুধু ভিডিও আইডি দিন (YouTube link-এর v= এর পরের অংশ)
+    "XXXXXXXX",
+    "YYYYYYYY",
+    "ZZZZZZZZ",
+    "WWWWWWWW"
+];
 
-fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${channelID}`)
-    .then(res => res.text())
-    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-    .then(data => {
-        let entries = data.getElementsByTagName("entry");
+const container = document.getElementById("video-container");
 
-        // যদি ভিডিও কম থাকে, লুপ অটো অ্যাডজাস্ট করবে
-        let limit = entries.length >= 6 ? 6 : entries.length;
-
-        for (let i = 0; i < limit; i++) {
-            let videoId = entries[i].getElementsByTagName("yt:videoId")[0].textContent;
-            let title = entries[i].getElementsByTagName("title")[0].textContent;
-            let thumb = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-
-            let card = document.createElement("div");
-            card.className = "video-card";
-
-            card.innerHTML = `
-                <img src="${thumb}" alt="Thumbnail">
-                <h3>${title}</h3>
-                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="btn">Watch</a>
-            `;
-
-            videoContainer.appendChild(card);
-        }
-    })
-    .catch(error => {
-        console.error("YouTube Feed Load Error:", error);
-        videoContainer.innerHTML = "<p style='color:red'>Failed to load videos.</p>";
+if (container) {
+    videoList.forEach(id => {
+        const card = `
+            <a class="video-card" href="https://www.youtube.com/watch?v=${id}" target="_blank">
+                <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg">
+                <p>Video Title</p>
+            </a>
+        `;
+        container.innerHTML += card;
     });
+}
