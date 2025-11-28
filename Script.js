@@ -9,7 +9,7 @@ function toggleTheme() {
 // https://youtu.be/nzgKmiGxhVY?si=T-RjpxGn0yIOV0UW
 
 const videoList = [
-    // এখানে শুধু ভিডিও আইডি দিন (YouTube link-এর v= এর পরের অংশ)
+    // nzgKmiGxhVY
     "XXXXXXXX",
     "YYYYYYYY",
     "ZZZZZZZZ",
