@@ -45,41 +45,15 @@
 
 
 
-<!-- LATEST VIDEOS SECTION -->
+<!-- LATEST VIDEOS SECTION (Auto-loaded) -->
 <section class="videos">
     <h2>Latest Videos</h2>
 
-    <div class="video-grid">
-
-        <!-- VIDEO 1 -->
-        <a class="video-card" href="https://www.youtube.com/watch?v=XXXXXXXX" target="_blank">
-            <img src="https://img.youtube.com/vi/XXXXXXXX/hqdefault.jpg">
-            <p>Video Title 1</p>
-        </a>
-
-        <!-- VIDEO 2 -->
-        <a class="video-card" href="https://www.youtube.com/watch?v=YYYYYYYY" target="_blank">
-            <img src="https://img.youtube.com/vi/YYYYYYYY/hqdefault.jpg">
-            <p>Video Title 2</p>
-        </a>
-
-        <!-- VIDEO 3 -->
-        <a class="video-card" href="https://www.youtube.com/watch?v=ZZZZZZZZ" target="_blank">
-            <img src="https://img.youtube.com/vi/ZZZZZZZZ/hqdefault.jpg">
-            <p>Video Title 3</p>
-        </a>
-
-        <!-- VIDEO 4 -->
-        <a class="video-card" href="https://www.youtube.com/watch?v=WWWWWWWW" target="_blank">
-            <img src="https://img.youtube.com/vi/WWWWWWWW/hqdefault.jpg">
-            <p>Video Title 4</p>
-        </a>
-
-    </div>
+    <!-- এখানে script.js ভিডিওগুলো লোড করবে -->
+    <div class="video-grid" id="videos-container"></div>
 
     <a href="videos.html" class="see-more-btn">See More</a>
 </section>
-
 
 
 <script>
@@ -87,6 +61,8 @@ function toggleTheme() {
     document.body.classList.toggle("light");
 }
 </script>
+
 <script src="script.js"></script>
+
 </body>
 </html>
