@@ -16,7 +16,7 @@ const videoList = [
     "WWWWWWWW"
 ];
 
-const container = document.getElementById("video-container");
+const container = <div id="videos-container"></div>
 
 if (container) {
     videoList.forEach(id => {
